@@ -2,7 +2,7 @@
 # Number Range Summarizer
 ## By Zayaan Hendricks
 
-Java CLI that summarizes a sequence of integers by grouping **strictly monotonic runs** where each step is **+1 or −1**, preserving the original input order.
+A Java number range summarizer that summarizes a sequence of integers by grouping **strictly monotonic runs** where each step is **+1 or −1**, preserving the original input order.
 
 Example:
 Input: 1,2,3,4,6,5,4,3,2
@@ -77,7 +77,7 @@ Run tests in Docker:
 docker compose run test-runner
 ```
 
-Project structure
+## Project structure
 ```Impact.com/
 ├── src/main/java/numberrangesummarizer/
 │   ├── NumberRangeSummarizer.java
