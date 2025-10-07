@@ -1,3 +1,31 @@
-# Build folder and log file
-build/
-build.log
+# Java / Maven
+/target/
+/dependency-reduced-pom.xml
+*.class
+*.log
+*.hprof
+hs_err_pid*
+replay_pid*
+*.orig
+
+# IntelliJ / Eclipse / VS Code
+.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+.vscode/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Env / local run files
+.env
+*.local
+
+# Docker
+.docker/
+docker-cache/

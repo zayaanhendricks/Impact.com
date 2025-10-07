@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  number-range-summarizer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: number-range-summarizer:latest
+    container_name: range-summarizer
+    stdin_open: true
+    tty: true
+    environment:
+      - JAVA_OPTS=-Xmx256m
+    networks:
+      - app-network
+
+  # Optional: Add a service for running tests in Docker
+  test-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    container_name: range-summarizer-tests
+    command: mvn test
+    volumes:
+      - ./target:/app/target
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+# Usage:
+# Build and run: docker-compose up
+# Run tests: docker-compose run test-runner
+# Interactive mode: docker-compose run number-range-summarizer
